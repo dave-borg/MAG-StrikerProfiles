@@ -44,3 +44,6 @@ The User Management Service is a critical component of a microservices architect
 - **Deployment**: Consider containerization with Docker and orchestration with Kubernetes for scalable and manageable deployment. Integrate with CI/CD pipelines for automated testing and deployment processes.
 
 The User Management Service plays a foundational role in the system's architecture, underpinning the security and personalized experience of the MAG flying club's booking system. Its design and implementation should prioritize security, scalability, and a seamless user experience.
+
+### OAUTH 2.0
+Spring Security 5 introduced first-class support for OAuth 2.0 Login, simplifying the integration of third-party authentication providers.
