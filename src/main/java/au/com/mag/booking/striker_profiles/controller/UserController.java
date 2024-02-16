@@ -53,12 +53,12 @@ public class UserController {
         return new String();
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteByEmail", method = RequestMethod.DELETE)
     public String deleteUser(@RequestParam String email) {
         return new String();
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteByArn", method = RequestMethod.DELETE)
     public String deleteUser(@RequestParam int arn) {
         return new String();
     }
@@ -70,11 +70,6 @@ public class UserController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public String logoutUser(@RequestParam String email) {
-        return new String();
-    }
-
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public String logoutUser(@RequestParam int arn) {
         return new String();
     }
 
