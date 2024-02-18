@@ -1,6 +1,5 @@
 package au.com.mag.booking.striker_profiles.controller;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import au.com.mag.booking.striker_profiles.model.User;
@@ -8,7 +7,6 @@ import au.com.mag.booking.striker_profiles.service.UserService;
 
 import java.net.URI;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +18,6 @@ public class UserController {
 
     private final UserService userService;
 
-    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -43,37 +40,37 @@ public class UserController {
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @GetMapping("/findByArn")
     public String getUser(@RequestParam int arn) {
         return new String();
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    @PutMapping("/update")
     public String updateUser(@RequestParam String email, @RequestParam String name, @RequestParam String pwdHash) {
         return new String();
     }
 
-    @RequestMapping(value = "/deleteByEmail", method = RequestMethod.DELETE)
+    @DeleteMapping("/deleteByEmail")
     public String deleteUser(@RequestParam String email) {
         return new String();
     }
 
-    @RequestMapping(value = "/deleteByArn", method = RequestMethod.DELETE)
+    @DeleteMapping("/deleteByArn")
     public String deleteUser(@RequestParam int arn) {
         return new String();
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @PostMapping("/login")
     public String loginUser(@RequestParam String email, @RequestParam String pwdHash) {
         return new String();
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @PostMapping("/logout")
     public String logoutUser(@RequestParam String email) {
         return new String();
     }
 
-    @RequestMapping(value = "/request_method_name", method = RequestMethod.GET)
+    @GetMapping("/request_method_name")
     public String requestMethodName(@RequestParam String param) {
         return new String();
     }
