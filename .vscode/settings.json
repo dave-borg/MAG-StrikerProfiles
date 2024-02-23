@@ -5,6 +5,10 @@
         {
             "command": "clean package",
             "debug": false
+        },
+        {
+            "command": "clean test",
+            "debug": false
         }
     ]
 }

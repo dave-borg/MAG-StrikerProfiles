@@ -9,5 +9,4 @@ public class MagStrikerProfilesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MagStrikerProfilesApplication.class, args);
 	}
-
 }

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MagStrikerProfilesApplication<MagStrikerProfiles>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "au.com.mag.booking.striker_profiles.MagStrikerProfilesApplication",
+            "projectName": "MagStrikerProfiles",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

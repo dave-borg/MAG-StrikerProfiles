@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
@@ -14,13 +16,31 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message="Pilot's name is mandatory")
     private String name;
-    private String email;
-    private int arn;
-    private String pwdHash;
 
-    public User(String name2, String email2, int arn2, String pwdHash2) {
-        // TODO Auto-generated constructor stub
+    @NotBlank(message="Pilot's email is mandatory")
+    @Email(message="Pilot's email is invalid")
+    private String email;
+    
+    private int arn;
+
+    private String phoneNumber;
+
+    public User() {
+    }
+
+    /**
+     * 
+     * @param _name Pilot's name
+     * @param _email Pilot's email
+     * @param _arn Pilot ARN
+     */
+    public User(String _name, String _email, int _arn, String _phoneNumber) {
+        this.name = _name;
+        this.email = _email;
+        this.arn = _arn;
+        this.phoneNumber = _phoneNumber;
     }
 
     public Long getId() {
@@ -55,12 +75,16 @@ public class User {
         this.arn = arn;
     }
 
-    public String getPwdHash() {
-        return pwdHash;
+    @Override
+    public String toString() {
+        return "User [arn=" + arn + ", email=" + email + ", name=" + name + ", phoneNumber=" + phoneNumber + "]";
     }
 
-    public void setPwdHash(String pwdHash) {
-        this.pwdHash = pwdHash;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }
