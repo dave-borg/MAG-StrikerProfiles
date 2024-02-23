@@ -180,6 +180,7 @@ public class UserController {
         if (isUpdated) {
             return ResponseEntity.ok("User with email " + newEmail + " updated successfully");
         } else {
+            log.info(String.format("User with email %s not found", existingEmail));
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User with email " + existingEmail + " not found");
         }
     }

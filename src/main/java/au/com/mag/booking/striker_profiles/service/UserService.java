@@ -125,17 +125,20 @@ public class UserService {
      * @return true if they're back on the dance floor with a new look, false if they missed the beat.
      */
     public boolean updateUser(@Valid String existingEmail, @Valid String newEmail, @Valid String newName, @Valid int newArn, @Valid String phoneNumber) {
+        log.debug(String.format("Updating user {existingEmail: %s, newEmail: %s, newName: %s, newARN: %d, newPhoneNumber: %s}", existingEmail, newEmail, newName, newArn, phoneNumber));
         Optional<User> user = userRepository.findByEmail(existingEmail);
         if (user.isPresent()) {
             User existingUser = user.get();
 
             // Check if the new email is duplicated
             if (!existingUser.getEmail().equals(newEmail) && userRepository.existsByEmail(newEmail)) {
+                log.info(String.format("Error updating user: Email %s is duplicated", newEmail));
                 throw new ConstraintViolationException("Email is duplicated", null);
             }
 
             // Check if the new ARN is duplicated
             if (existingUser.getArn() != newArn && userRepository.existsByArn(newArn)) {
+                log.info(String.format("Error updating user: ARN %d is duplicated", newArn));
                 throw new ConstraintViolationException("ARN is duplicated", null);
             }
 
@@ -147,8 +150,10 @@ public class UserService {
             // Validate the updated user
             Set<ConstraintViolation<User>> violations = validator.validate(existingUser);
             if (!violations.isEmpty()) {
+                log.info(String.format("Error updating user: %s", violations));
                 throw new ConstraintViolationException(violations);
             }
+
 
             userRepository.save(existingUser);
             return true;
