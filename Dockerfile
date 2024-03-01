@@ -2,7 +2,7 @@
 FROM openjdk:17-jdk-slim
 
 # Add Maintainer Info
-LABEL maintainer="Dave Borgeest"
+LABEL maintainer="david.borgeest@gmail.com"
 
 WORKDIR /app
 
