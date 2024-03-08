@@ -47,3 +47,5 @@ The User Management Service plays a foundational role in the system's architectu
 
 ### OAUTH 2.0
 Spring Security 5 introduced first-class support for OAuth 2.0 Login, simplifying the integration of third-party authentication providers.
+
+Trigger build

@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>au.com.mag.booking</groupId>
-	<artifactId>MagStrikerProfiles</artifactId>
+	<artifactId>mag-striker-profiles</artifactId>
 	<version>0.0.1</version>
 	<name>MagStrikerProfiles</name>
 	<description>Handles user accounts, roles (member, admin), and permissions.</description>
