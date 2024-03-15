@@ -39,3 +39,9 @@ jobs:
       with:
         name: target
         path: target
+
+    - name: List target directory
+      run: ls -la target
+
+    - name: Print current directory
+      run: pwd
