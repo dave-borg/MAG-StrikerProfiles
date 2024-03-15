@@ -5,6 +5,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_run:
+    workflows: ["Java CI with Maven"]
+    branches: [main]
+    types: 
+      - completed
 
 jobs:
 
